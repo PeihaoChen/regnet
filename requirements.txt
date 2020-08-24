@@ -1,0 +1,12 @@
+numba==0.48.0
+librosa==0.6.1
+matplotlib
+opencv-python==3.4.4.19
+pillow==5.0
+tqdm
+yacs
+future
+numpy
+scipy
+sklearn
+tensorboard
