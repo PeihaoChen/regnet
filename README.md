@@ -18,7 +18,7 @@ Demo videos containing sound generation results can be found [here][demo].
       * [Installation](#installation)
       * [Download Datasets](#download-datasets)
       * [Data Preprocessing](#data-preprocessing)
-   * [Training REGNET](#training-regnet)
+   * [Training RegNet](#training-regnet)
    * [Generating Sound](#generating-sound)
    * [Pre-trained RegNet](#pre-trained-regnet)
 * [Other Info](#other-info)
@@ -76,9 +76,9 @@ source data_preprocess.sh
 ```
 
 
-## Training REGNET
+## Training RegNet
 
-Training the REGNET from scratch. The results will be saved to `ckpt/dog`.
+Training the RegNet from scratch. The results will be saved to `ckpt/dog`.
 
 ```bash
 CUDA_VISIBLE_DEVICES=7 python train.py \
@@ -163,7 +163,7 @@ Enjoy your experiments!
 ## Citation
 
 
-Please cite the following paper if you feel REGNET useful to your research
+Please cite the following paper if you feel RegNet useful to your research
 ```
 @Article{chen2020regnet,
   author  = {Peihao Chen, Yang Zhang, Mingkui Tan, Hongdong Xiao, Deng Huang and Chuang Gan},
