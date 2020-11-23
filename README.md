@@ -6,6 +6,9 @@ Demo videos containing sound generation results can be found [here][demo].
 
 ![](https://github.com/PeihaoChen/regnet/blob/master/overview.png)
 
+## Updates
+
+- We release the pre-computed features for the testset of Dog category, together with the pre-trained RegNet. You can use them for generating dog sounds by yourself. (23/11/2020)
 
 # Contents
 ----
@@ -17,6 +20,7 @@ Demo videos containing sound generation results can be found [here][demo].
       * [Data Preprocessing](#data-preprocessing)
    * [Training REGNET](#training-regnet)
    * [Generating Sound](#generating-sound)
+   * [Pre-trained RegNet](#pre-trained-regnet)
 * [Other Info](#other-info)
    * [Citation](#citation)
    * [Contact](#contact)
@@ -123,16 +127,24 @@ git clone https://github.com/r9y9/wavenet_vocoder && cd wavenet_vocoder
 git checkout 2092a64
 ```
 
-## Pre-trained Models
-You can also use our pre-trained RegNet for generating visually aligned sounds.
+## Pre-trained RegNet
 
-First, download and unzip our pre-trained RegNet ([Dog](https://github.com/PeihaoChen/regnet/releases/download/Pretrained_RegNet/RegNet_dog_checkpoint_041000.tar)) to `./ckpt/dog` folder.
+You can also use our pre-trained RegNet and pre-computed features for generating visually aligned sounds.
+
+First, download and unzip the pre-computed features ([Dog](https://github.com/PeihaoChen/regnet/releases/download/Pretrained_RegNet/features_dog_testset.tar)) to `./data/features/dog` folder.
 ```bash
+cd ./data/features/dog
+tar -xvf features_dog_testset.tar # unzip
+```
+
+Second, download and unzip our pre-trained RegNet ([Dog](https://github.com/PeihaoChen/regnet/releases/download/Pretrained_RegNet/RegNet_dog_checkpoint_041000.tar)) to `./ckpt/dog` folder.
+```bash
+cd ./ckpt/dog
 tar -xvf ./ckpt/dog/RegNet_dog_checkpoint_041000.tar # unzip
 ```
 
 
-Second, run the inference code.
+Third, run the inference code.
 ```bash
 CUDA_VISIBLE_DEVICES=0 python test.py \
 -c config/dog_opts.yml \ 
