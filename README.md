@@ -79,7 +79,7 @@ Training the REGNET from scratch. The results will be saved to `ckpt/dog`.
 ```bash
 CUDA_VISIBLE_DEVICES=7 python train.py \
 save_dir ckpt/dog \
-auxiliary_dim 64 \ 
+auxiliary_dim 32 \ 
 rgb_feature_dir data/features/dog/feature_rgb_bninception_dim1024_21.5fps \
 flow_feature_dir data/features/dog/feature_flow_bninception_dim1024_21.5fps \
 mel_dir data/features/dog/melspec_10s_22050hz \
@@ -121,6 +121,25 @@ If you want to train your own WaveNet model, you can use [WaveNet repository][wa
 ```bash
 git clone https://github.com/r9y9/wavenet_vocoder && cd wavenet_vocoder
 git checkout 2092a64
+```
+
+## Pre-trained Models
+You can also use our pre-trained RegNet for generating visually aligned sounds.
+
+First, download and unzip our pre-trained RegNet ([Dog](https://github.com/PeihaoChen/regnet/releases/download/Pretrained_RegNet/RegNet_dog_checkpoint_041000.tar)) to `./ckpt/dog` folder.
+```bash
+tar -xvf ./ckpt/dog/RegNet_dog_checkpoint_041000.tar # unzip
+```
+
+
+Second, run the inference code.
+```bash
+CUDA_VISIBLE_DEVICES=0 python test.py \
+-c config/dog_opts.yml \ 
+aux_zero True \ 
+checkpoint_path ckpt/dog/checkpoint_041000 \ 
+save_dir ckpt/dog/inference_result \
+wavenet_path /path/to/wavenet_dog.pth
 ```
 
 Enjoy your experiments!
