@@ -131,13 +131,13 @@ git checkout 2092a64
 
 You can also use our pre-trained RegNet and pre-computed features for generating visually aligned sounds.
 
-First, download and unzip the pre-computed features ([Dog](https://github.com/PeihaoChen/regnet/releases/download/Pretrained_RegNet/features_dog_testset.tar)) to `./data/features/dog` folder.
+First, download and unzip the pre-computed features ([Dog](https://github.com/PeihaoChen/regnet/releases/download/pretrained_RegNet/features_dog_testset.tar)) to `./data/features/dog` folder.
 ```bash
 cd ./data/features/dog
 tar -xvf features_dog_testset.tar # unzip
 ```
 
-Second, download and unzip our pre-trained RegNet ([Dog](https://github.com/PeihaoChen/regnet/releases/download/Pretrained_RegNet/RegNet_dog_checkpoint_041000.tar)) to `./ckpt/dog` folder.
+Second, download and unzip our pre-trained RegNet ([Dog](https://github.com/PeihaoChen/regnet/releases/download/pretrained_RegNet/RegNet_dog_checkpoint_041000.tar)) to `./ckpt/dog` folder.
 ```bash
 cd ./ckpt/dog
 tar -xvf ./ckpt/dog/RegNet_dog_checkpoint_041000.tar # unzip
